@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 5  // Maximum size of the stack
+#define MAX 5  
 
-// Define the stack structure
 struct Stack {
     int data[MAX];
     int top;
 };
 
-// Function prototypes
 void push(struct Stack *s, int value);
 int pop(struct Stack *s);
 int peek(struct Stack *s);
@@ -20,12 +18,12 @@ void delete_n(struct Stack *s, int n);
 
 int main() {
     struct Stack stack;
-    stack.top = -1;  // Initialize the stack's top
+    stack.top = -1;  
 
     int choice, value, ele;
 
     do {
-        // Display menu
+
         printf("\n\n--- Menu ---\n");
         printf("1. Push\n");
         printf("2. Pop\n");
@@ -77,7 +75,7 @@ int main() {
     return 0;
 }
 
-// Push function to add element to the stack
+
 void push(struct Stack *s, int value) {
     if (isFull(s)) {
         printf("Stack overflow! Cannot push %d\n", value);
@@ -88,7 +86,7 @@ void push(struct Stack *s, int value) {
     printf("%d pushed onto stack\n", value);
 }
 
-// Pop function to remove element from the stack
+
 int pop(struct Stack *s) {
     if (isEmpty(s)) {
         printf("Stack underflow! Cannot pop\n");
@@ -99,7 +97,7 @@ int pop(struct Stack *s) {
     return value;
 }
 
-// Peek function to view the top element of the stack
+
 int peek(struct Stack *s) {
     if (isEmpty(s)) {
         printf("Stack is empty!\n");
@@ -108,17 +106,17 @@ int peek(struct Stack *s) {
     return s->data[s->top];
 }
 
-// Check if the stack is full
+
 int isFull(struct Stack *s) {
     return s->top == MAX - 1;
 }
 
-// Check if the stack is empty
+
 int isEmpty(struct Stack *s) {
     return s->top == -1;
 }
 
-// Display function to show all elements of the stack
+
 void display(struct Stack *s) {
     if (isEmpty(s)) {
         printf("Stack is empty!\n");
@@ -132,7 +130,7 @@ void display(struct Stack *s) {
     printf("\n");
 }
 
-//delete nth element
+
 void delete_n(struct Stack *s, int n){
     struct Stack temp;
     temp.top = -1;
